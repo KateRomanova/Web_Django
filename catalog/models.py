@@ -48,7 +48,7 @@ class Product(models.Model):
         help_text="Введите категорию",
         null=True,
         blank=True,
-        related_name='categories',
+        related_name="categories",
     )
     price = models.IntegerField(
         verbose_name="Цена", help_text="Укажите цену за покупку"
@@ -64,6 +64,12 @@ class Product(models.Model):
         null=True,
         verbose_name="Дата последнего изменения (записи в БД)",
         help_text="Укажите дату последнего изменения (записи в БД)",
+    )
+    manufactured_at = models.DateField(
+        blank=True,
+        null=True,
+        verbose_name="Дата производства продукта",
+        help_text="Укажите дату производства продукта",
     )
 
     class Meta:
