@@ -38,7 +38,7 @@ class Product(models.Model):
         upload_to="product/photo",
         blank=True,
         null=True,
-        verbose_name="Изображение(превью)",
+        verbose_name="Изображение (превью)",
         help_text="Загрузите фото продукта",
     )
     category = models.ForeignKey(
