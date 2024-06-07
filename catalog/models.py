@@ -50,7 +50,8 @@ class Product(models.Model):
         blank=True,
         related_name="categories",
     )
-    price = models.IntegerField(
+    price = models.IntegerField(blank=True,
+        null=True,
         verbose_name="Цена", help_text="Укажите цену за покупку"
     )
     created_at = models.DateField(
