@@ -12,6 +12,12 @@ class Blog(models.Model):
         verbose_name="Ссылка",
         help_text="Введите ссылку",
     )
+    description = models.TextField(
+        verbose_name="Содержимое",
+        help_text="Введите содержимое",
+        blank=True,
+        null=True,
+    )
     photo = models.ImageField(
         upload_to="product/photo",
         blank=True,
@@ -30,7 +36,7 @@ class Blog(models.Model):
         verbose_name="Опубликовано",
         help_text="Опубликовать запись",
     )
-    views = models.IntegerField(
+    views = models.PositiveIntegerField(
         default=0,
         verbose_name="Количество просмотров",
         help_text="Укажите количество просмотров",
