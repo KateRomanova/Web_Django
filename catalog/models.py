@@ -100,7 +100,7 @@ class Version(models.Model):
         blank=True,
     )
     is_version_active = models.BooleanField(
-        default=False,
+        default=True,
         verbose_name="Активная версия",
         help_text="является ли версия активной",
     )

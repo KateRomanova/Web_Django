@@ -25,7 +25,7 @@ class Blog(models.Model):
         verbose_name="Изображение (превью)",
         help_text="Загрузите изображение",
     )
-    created_at = models.DateField(
+    created_at = models.DateTimeField(
         blank=True,
         null=True,
         verbose_name="Дата создания",
