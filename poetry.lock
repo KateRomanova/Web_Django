@@ -267,6 +267,17 @@ files = [
 ]
 
 [[package]]
+name = "nullable"
+version = "0.2.0"
+description = "Typed Null support"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "nullable-0.2.0-py3-none-any.whl", hash = "sha256:3faea4e40fbd0b23080df2bb77113aa6a5d6eaaa148731aab73b1a045b9f35cf"},
+    {file = "nullable-0.2.0.tar.gz", hash = "sha256:d42011b1634750e1df528a86781f3d0abd92d2aba8211c91a9182880a1753307"},
+]
+
+[[package]]
 name = "packaging"
 version = "24.0"
 description = "Core utilities for Python packages"
@@ -638,4 +649,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "d0ffbb520d9d915da67ffa7773949a012deea9f1d1def5ff7af0e1f3651ec2b1"
+content-hash = "21e55df87ef28a0dedc3652639db1b522541b1b43341ff6fed3d05589627e4e5"
