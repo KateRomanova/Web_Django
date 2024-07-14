@@ -52,7 +52,6 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
         product = form.save(commit=False)
         product.owner = self.request.user
         product.save()
-        product.owner.save()
         return redirect('catalog:product_detail', product.pk)
 
 
@@ -95,7 +94,6 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_form_class(self):
         user = self.request.user
-        user.save()
         if user == self.object.owner:
             return ProductForm
         raise PermissionDenied
