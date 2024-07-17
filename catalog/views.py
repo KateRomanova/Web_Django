@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
 from catalog.models import Product, Version
 
 
@@ -22,7 +22,7 @@ class ProductListView(ListView):
     model = Product
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(DetailView, LoginRequiredMixin):
     model = Product
 
     def get_context_data(self, **kwargs):
@@ -85,6 +85,8 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         user.save()
         if user == self.object.owner:
             return ProductForm
+        if user.has_perm('catalog.can_edit_product_description') and user.has_perm('catalog.can_edit_product_category') and user.has_perm('catalog.can_cancel_publication'):
+            return ProductModeratorForm
         raise PermissionDenied
 
 

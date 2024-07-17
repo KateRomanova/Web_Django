@@ -62,3 +62,6 @@ class NewPasswordView(PasswordResetView):
             user.save()
 
             return redirect(reverse('users:login'))
+
+        else:
+            return redirect(reverse('users/new_password.html'))
