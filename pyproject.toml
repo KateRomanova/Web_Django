@@ -15,6 +15,8 @@ articles = "^0.1.0"
 article = "^0.1.1"
 django = "4.2.2"
 nullable = "^0.2.0"
+redis = "^5.0.7"
+python-dotenv = "^1.0.1"
 
 
 [build-system]
